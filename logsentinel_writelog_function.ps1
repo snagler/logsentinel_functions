@@ -33,8 +33,8 @@
     $convert_bytes = [System.Text.Encoding]::UTF8.GetBytes($organization_id + ":" + $secret)
     $authorization = [System.Convert]::ToBase64String($convert_bytes)
 
-    $userinfo = "$action" + "?actorDisplayName=" + "$actor_displayname"
-    $uri ="https://logsentinel.com/api/log/$actor_id/$userinfo"
+    $uriinfo = $actor_id + "/" + "$action" + "?actorDisplayName=" + "$actor_displayname"
+    $uri ="https://logsentinel.com/api/log/$uriinfo"
 
     $header = @{
         
